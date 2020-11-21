@@ -145,12 +145,46 @@ $('#plus').click(function() {
 
 });
 
+$('#min').click(function() {
+	console.log('min');
+	calculator.func = 'min'
+
+});
+
+$('#del').click(function() {
+	console.log('del');
+	calculator.func = 'del'
+
+});
+
+$('#umn').click(function() {
+	console.log('umn');
+	calculator.func = 'umn'
+
+});
+
 $('#enter').click(function() {
 	console.log('enter');
 	if (calculator.func === 'plus') {
 		calculator.enter = calculator.numberA + calculator.numberB;
 		calculator.output =calculator.enter;
 	}
+
+	if (calculator.func === 'min') {
+		calculator.enter = calculator.numberA - calculator.numberB;
+		calculator.output =calculator.enter;
+	}
+
+	if (calculator.func === 'del') {
+		calculator.enter = calculator.numberA / calculator.numberB;
+		calculator.output =calculator.enter;
+	}
+
+	if (calculator.func === 'umn') {
+		calculator.enter = calculator.numberA * calculator.numberB;
+		calculator.output =calculator.enter;
+	}
+
 	output();
 });
 
